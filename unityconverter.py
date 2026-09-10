@@ -48,7 +48,7 @@ try:
         new_filename = f"run_{first_exe.stem}.bat"
         new_file_path = current_dir / new_filename
 
-        file_content = f"./rundll32 ./UnityPlayer.dll,UnityMain"
+        file_content = ".\\rundll32 .\\UnityPlayer.dll,UnityMain"
 
         with open(new_file_path, "w", encoding="utf-8") as f:
             f.write(file_content)
