@@ -22,3 +22,4 @@ try:
         print(f"Source file not found at: {system32_path}")
 except Exception as e:
     print(f"Error handling file: {e}")
+    time.sleep(3)
