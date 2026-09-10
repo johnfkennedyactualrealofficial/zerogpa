@@ -8,7 +8,6 @@ import os
 import subprocess
 import time
 import shutil
-import psutil
 
 def find_procs_fast_suspend(target_path):
     target_name = os.path.basename(target_path).lower()
@@ -69,6 +68,7 @@ from pystray import MenuItem as item
 import datetime
 import time
 from winreg import (HKEY_CURRENT_USER, KEY_QUERY_VALUE, KEY_SET_VALUE, OpenKey, QueryValueEx, REG_BINARY, SetValueEx)
+import psutil
 
 def dis_ib() -> None:
     with OpenKey(HKEY_CURRENT_USER, r'Software\Microsoft\Windows\CurrentVersion\Internet Settings\Connections', access=KEY_QUERY_VALUE | KEY_SET_VALUE) as connections:
