@@ -4,7 +4,7 @@
 - silly_sec: stops SEC****Y from working
 - silly_duo: stops both from working
 - unityconverter: makes 64 bit unity projects bend to your will
-- unityconverter32: makes 32 bit unity projects bend to your will
+- unityconverter32: makes 32 bit unity projects bend to your will (use this if the normal converter gives you an error saying something about SysWOW64)
 - love2d: makes love2d games bend to your will
 - cprundll: developer tool to copy the rundll32 binary into the current directory
 - cprundll32: developer tool to copy the 32 bit rundll32 binary into the current directory
