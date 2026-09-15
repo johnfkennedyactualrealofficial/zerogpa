@@ -117,14 +117,14 @@ def on_pause(icon, menu_item):
     global running
     running = not running  # toggle pause
     # change icon color
-    icon.icon = create_image((0,128,128) if not running else (0,255,255))
+    icon.icon = create_image((74,20,140) if not running else (209,179,233))
     icon.update_menu()
 
 if __name__ == "__main__":
     icon = pystray.Icon(
-        "silly sec",
-        create_image((0,128,128) if not running else (0,255,255)),
-        "silly sec running",
+        "silly duo",
+        create_image((48,25,52) if not running else (209,179,233)),
+        "silly duo running",
         menu=pystray.Menu(
             item("Pause/Resume", on_pause),
             item("Restart", on_restart),
