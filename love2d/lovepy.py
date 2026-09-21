@@ -2,13 +2,14 @@ import ctypes
 import os
 import sys
 
-def run_game(game_path, dll_dir=None):
+def run_game(game_path, modded=False, dll_dir=None):
     """
     Launches a LÖVE game from a directory or .love file using liblove.dll.
     
     :param game_path: Path to the .love file or game folder.
     :param dll_dir: Directory containing liblove.dll and dependent DLLs.
                     Defaults to the script's directory if not provided.
+    :param modded: Whether to load version.dll (lovely mod injector binary)
     :return: Exit code from love_run_game.
     """
     abs_game_path = os.path.abspath(game_path)
@@ -36,6 +37,11 @@ def run_game(game_path, dll_dir=None):
 
     # Load the library
     try:
+        try:
+            if modded:
+                version_lib = ctypes.CDLL(os.path.join(dll_dir, "version.dll"))
+        except OSError as e:
+            pass
         love_lib = ctypes.CDLL(dll_path)
     except OSError as e:
         raise OSError(f"Failed to load DLL from {dll_path}. Ensure all dependencies (SDL2.dll, etc.) are in {dll_dir}. Error: {e}")
